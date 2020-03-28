@@ -10,8 +10,12 @@
     "@angular/platform-browser": "^8.0.0",
     "@angular/platform-browser-dynamic": "^8.0.0",
     "@angular/router": "^8.0.0",
+    "@types/node": "^13.9.5",
     "core-js": "2",
+    "pg": "^7.18.2",
+    "reflect-metadata": "^0.1.13",
     "rxjs": "^6.5.2",
+    "typeorm": "^0.2.24",
     "zone.js": "^0.9.1"
   },
   "scripts": {
