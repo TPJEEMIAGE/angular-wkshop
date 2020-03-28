@@ -1,8 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder } from '@angular/forms';
 import { createConnection } from "typeorm";
+import { User } from '../user';
 
-const connection = await createConnection();
+const connection = createConnection();
 
 @Component({
   selector: 'app-login',
@@ -12,6 +13,7 @@ const connection = await createConnection();
 export class LoginComponent implements OnInit {
 
   checkoutForm;
+  users : User[] = [];
   
 
   constructor(private formBuilder: FormBuilder) { 
@@ -26,7 +28,7 @@ export class LoginComponent implements OnInit {
   }
 
   onSubmit(loginData){
-    await connection.connect();
+    connection.then(() => User.find()).then(users => {this.users = users});
   }
 
 }
