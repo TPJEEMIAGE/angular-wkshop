@@ -1,13 +1,13 @@
-<form [formGroup]="checkoutForm">
+<form [formGroup]="checkoutForm" (ngSubmit)="onSubmit(checkoutForm.value)">
   <div>
     <label for="login">
-      login
+      Login
     </label>
     <input id="login" type="text" formControlName="login"/>
   </div>
   <div>
     <label for="password">
-      login
+      Mot de passe
     </label>
     <input id="password" type="secret" formControlName="password"/>
   </div>

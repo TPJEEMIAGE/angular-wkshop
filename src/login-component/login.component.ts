@@ -21,8 +21,8 @@ export class LoginComponent implements OnInit {
     });
   }
 
-  onSubmit(){
-    window.alert(this.checkoutForm.login + " " + this.checkoutForm.password);
+  onSubmit(loginData){
+    window.alert(loginData.login + " " + loginData.password);
   }
 
 }
