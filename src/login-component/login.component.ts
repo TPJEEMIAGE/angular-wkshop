@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder } from '@angular/forms';
+import { createConnection } from "typeorm";
+
+const connection = await createConnection();
 
 @Component({
   selector: 'app-login',
@@ -9,6 +12,7 @@ import { FormBuilder } from '@angular/forms';
 export class LoginComponent implements OnInit {
 
   checkoutForm;
+  
 
   constructor(private formBuilder: FormBuilder) { 
     
@@ -22,7 +26,7 @@ export class LoginComponent implements OnInit {
   }
 
   onSubmit(loginData){
-    window.alert(loginData.login + " " + loginData.password);
+    await connection.connect();
   }
 
 }
